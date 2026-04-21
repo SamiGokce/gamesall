@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <meta name="title" content="Games">
+  <meta name="description" content="A collection of simple, beautiful browser games.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Games">
+  <meta property="og:description" content="A collection of simple, beautiful browser games.">
+
+  <meta name="theme-color" content="#F1EADD">
+
+  <title>Games</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+      box-sizing: border-box;
+    }
+
+    *:focus { outline: none !important; }
+
+    html, body {
+      background: #F1EADD !important;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Noto Serif', serif;
+      color: #221F1F;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 32px 80px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: #075B5E;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border: 2px solid #221F1F;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-decoration: none;
+      color: #221F1F;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      text-align: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 0 #221F1F;
+    }
+
+    .card:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 0 #221F1F;
+    }
+
+    .card-title {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.15;
+      margin: 0 0 8px;
+    }
+
+    .card-desc {
+      font-size: 15px;
+      color: #075B5E;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .card.knowledge { background: #9FC87E; }
+    .card.coming-soon {
+      background: #F1EADD;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+    .card.coming-soon:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #221F1F;
+      color: #F1EADD;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .badge.soon {
+      background: #9B140C;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 56px;
+      text-align: center;
+      color: #075B5E;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .page { padding: 40px 20px 60px; }
+      h1 { font-size: 40px; }
+      .tagline { font-size: 16px; }
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .card { padding: 20px 16px; border-radius: 14px; }
+      .card-title { font-size: 22px; }
+      .card-desc { font-size: 13px; }
+    }
+
+    @media (max-width: 420px) {
+      .grid { grid-template-columns: 1fr; }
+      .card { aspect-ratio: 2 / 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Games</h1>
+      <p class="tagline">Simple, beautiful browser games.</p>
+    </header>
+
+    <main class="grid">
+      <a class="card knowledge" href="https://www.knowledgegame.io">
+        <span class="badge">Play</span>
+        <h2 class="card-title">The Game of Knowledge</h2>
+        <p class="card-desc">300+ trivia questions across 7 categories.</p>
+      </a>
+
+      <div class="card coming-soon">
+        <span class="badge soon">Soon</span>
+        <h2 class="card-title">Game 2</h2>
+        <p class="card-desc">Coming soon.</p>
+      </div>
+
+      <div class="card coming-soon">
+        <span class="badge soon">Soon</span>
+        <h2 class="card-title">Game 3</h2>
+        <p class="card-desc">Coming soon.</p>
+      </div>
+
+      <div class="card coming-soon">
+        <span class="badge soon">Soon</span>
+        <h2 class="card-title">Game 4</h2>
+        <p class="card-desc">Coming soon.</p>
+      </div>
+
+      <div class="card coming-soon">
+        <span class="badge soon">Soon</span>
+        <h2 class="card-title">Game 5</h2>
+        <p class="card-desc">Coming soon.</p>
+      </div>
+
+      <div class="card coming-soon">
+        <span class="badge soon">Soon</span>
+        <h2 class="card-title">Game 6</h2>
+        <p class="card-desc">Coming soon.</p>
+      </div>
+    </main>
+
+    <footer>
+      Made by Sami Gokce
+    </footer>
+  </div>
+</body>
+</html>
